@@ -86,7 +86,7 @@ $ rails s
 
 ## 💻 Project
 
-This project was developed for testing in the company Nuuvem, in the July 18, 2021. The project consists of receiving a csv or txt file, processing the file and adding it to the sqlite database. Also, be able to show order details as well as the order total.
+This project was developed for testing in the company Nuuvem, in the July 18, 2021. The project consists of receiving a csv, tab or txt file, processing the file and adding it to the sqlite database. Also, be able to show order details as well as the order total. An **example file** for uploading is inside the **storage folder**.
 
 
 ## 🐾 Next steps
