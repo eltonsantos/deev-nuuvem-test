@@ -1,0 +1,38 @@
+<div class="container">
+    <h1>Pedido <%= @order.id %></h1>
+    <div>
+        <table class="table shadow">
+            <thead>
+                <tr>
+                    <th>Purchaser</th>
+                    <th>Item Description</th>
+                    <th>Item Price</th>
+                    <th>Quantity</th>
+                    <th>Merchant Address</th>
+                    <th>Merchant Name</th>
+                <tr>
+            <thead>
+            <tbody>
+                <% @order.purchases.each do |purchase| %>
+                    <tr>
+                        <td><%= purchase.purchaser.name %></td>
+                        <td><%= purchase.item.description %></td>
+                        <td><%= number_to_currency(purchase.item.price, :unit => "R$ ", :separator => ",", :delimiter => ".") %></td>
+                        <td><%= purchase.quantity %></td>
+                        <td><%= purchase.merchant.address %></td>
+                        <td><%= purchase.merchant.name %></td>
+                    </tr>
+                <% end %>
+                <tr>
+                <td></td>
+                <td align="right" ><strong>Total: </strong></td>
+                <td><%= number_to_currency(@order.value, :unit => "R$ ", :separator => ",", :delimiter => ".") %></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <tr>
+            </tbody>
+        </table>
+        <%= link_to "Voltar", orders_path, class: "btn btn-info" %>
+    <div>
+</div>
