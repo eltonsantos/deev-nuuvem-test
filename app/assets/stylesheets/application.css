@@ -13,15 +13,3 @@
  *= require_tree .
  *= require_self
  */
- 
- .upload-wrapper {
-  border-radius: 6px;
-  
-  form {
-      border-radius: 6px;
-      color: #666;
-      font-size: 20px;
-      background: #eee;
-      border: 2px solid aliceblue;
-  }
-}

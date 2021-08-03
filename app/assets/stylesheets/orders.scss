@@ -1,3 +1,189 @@
-// Place all the styles related to the Orders controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* COLORS */
+$bg: #151d27;
+$semiblack: #222;
+$white: #fff;
+$gray: #aaa;
+$bgTable: #444;
+$red: #ff0000;
+$green: #00ff00;
+$black: #000;
+
+/* BPs */
+$b-md: 990px;
+$b-sm: 798px;
+
+body {
+  background-color: $bg;
+  color: #ccc;
+  margin: 33px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  color: $black;
+
+  &:visited {
+    color: #666;
+  }
+
+  &:hover {
+    color: $white;
+  }
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: $green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: $red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid $red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px -7px 0;
+    background-color: #c00;
+    color: $white;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+label {
+  display: block;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column-right {
+  flex-basis: 100%;
+  flex: 1;
+  margin: 15px
+}
+
+.total {
+  font-size: 18px;
+  color: $red;
+  padding: 0 0 10px 30px;
+}
+
+/* FLEX TABLE */
+.flex-table{
+	width: 100%;
+	[class^='flex-table--']{
+		display: flex;
+		font-size: 15px;
+		width: 100%;
+		letter-spacing: .1em;
+		&:not(.flex-table--body):not(.flex-table--header){
+			padding: 1.4em 1.2em;
+		}
+		span{
+			display: block;
+			flex: 1.5;
+			&:nth-child(1){
+				flex: 2;
+			}
+			&:nth-child(2){
+				flex: 2;
+			}
+		}
+	}
+	.flex-table--header{
+		background: $bgTable;
+		font-size: 17px;
+		color: $white;
+		font-weight: 700;
+		text-transform: uppercase;
+		margin-bottom: .6em;
+		box-shadow: 2px 2px 6px -2px fade($black, 20%);
+	}
+	.flex-table--body{
+		flex-direction: column;
+		font-style: italic;
+		color: $gray;
+		background: $bgTable;
+		box-shadow: 2px 2px 6px -2px fade($black, 20%);
+	}
+	.flex-table--row{
+		position: relative;
+		transition: .2s;
+
+		&:after{
+			position: absolute;
+			top: 50%;
+			left: 0;
+			background: $white;
+			height: 10px;
+			width: 10px;
+			transform: translate(-50%, -50%);
+			border-radius: 50%;
+			opacity: 0;
+			transition: .2s;
+		}
+		&:hover{
+			color: $white;
+			&:after{
+				opacity: 1;
+			}
+		}
+	}
+}
+
+@media (max-width: $b-sm){
+	.flex-table{
+		[class^='flex-table--']{
+			flex-direction: column;
+		}
+		.flex-table--body{
+			height: 50vh;
+			overflow-y: auto;
+			.flex-table--row{
+				display: block;
+			}
+		}
+		span:not(:last-child){
+			margin-bottom: .6em;
+		}
+	}
+}

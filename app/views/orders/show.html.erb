@@ -1,38 +1,40 @@
-<div class="container">
+<div class="column-left">
+    <%= image_tag("logo.png", alt: "TEST USING RUBY ON RAILS", width: "230") %>
+    <h1>Gerenciar pedidos</h2>
+    <%= link_to "Voltar", orders_path, class: "btn btn-info" %>
+</div>
+
+<div class="column-right">
     <h1>Pedido <%= @order.id %></h1>
     <div>
-        <table class="table shadow">
-            <thead>
+        <table class="table shadow flex-table">
+            <thead class="flex-table--header">
+                <tr class="flex-table--row">
+                    <th class="flex-table--row">Purchaser</th>
+                    <th class="flex-table--row">Item Description</th>
+                    <th class="flex-table--row">Item Price</th>
+                    <th class="flex-table--row">Quantity</th>
+                    <th class="flex-table--row">Merchant Address</th>
+                    <th class="flex-table--row">Merchant Name</th>
                 <tr>
-                    <th>Purchaser</th>
-                    <th>Item Description</th>
-                    <th>Item Price</th>
-                    <th>Quantity</th>
-                    <th>Merchant Address</th>
-                    <th>Merchant Name</th>
-                <tr>
             <thead>
-            <tbody>
+            <tbody class="flex-table--body">
                 <% @order.purchases.each do |purchase| %>
-                    <tr>
-                        <td><%= purchase.purchaser.name %></td>
-                        <td><%= purchase.item.description %></td>
-                        <td><%= number_to_currency(purchase.item.price, :unit => "R$ ", :separator => ",", :delimiter => ".") %></td>
-                        <td><%= purchase.quantity %></td>
-                        <td><%= purchase.merchant.address %></td>
-                        <td><%= purchase.merchant.name %></td>
+                    <tr class="flex-table--row">
+                        <td class="flex-table--row"><%= purchase.purchaser.name %></td>
+                        <td class="flex-table--row"><%= purchase.item.description %></td>
+                        <td class="flex-table--row"><%= number_to_currency(purchase.item.price, :unit => "R$ ", :separator => ",", :delimiter => ".") %></td>
+                        <td class="flex-table--row"><%= purchase.quantity %></td>
+                        <td class="flex-table--row"><%= purchase.merchant.address %></td>
+                        <td class="flex-table--row"><%= purchase.merchant.name %></td>
                     </tr>
                 <% end %>
                 <tr>
-                <td></td>
-                <td align="right" ><strong>Total: </strong></td>
-                <td><%= number_to_currency(@order.value, :unit => "R$ ", :separator => ",", :delimiter => ".") %></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <tr>
+                    <td align="left" class="total" ><strong>Total: </strong>
+                        <%= number_to_currency(@order.value, :unit => "R$ ", :separator => ",", :delimiter => ".") %>
+                    </td>
+                </tr>
             </tbody>
         </table>
-        <%= link_to "Voltar", orders_path, class: "btn btn-info" %>
     <div>
 </div>

@@ -1,6 +1,6 @@
-<tr>
-    <td>Pedido <%= order.id %></td>
-    <td> <%= order.created_at.strftime('%m/%d/%Y') %></td>
-    <td><%= number_to_currency(order.value, :unit => "R$ ", :separator => ",", :delimiter => ".") %></td>
-    <td><%= link_to "Details", order_path(order) %></td>
+<tr class="flex-table--row">
+    <td class="flex-table--row">Pedido <%= order.id %></td>
+    <td class="flex-table--row"> <%= order.created_at.strftime('%m/%d/%Y') %></td>
+    <td class="flex-table--row"><%= number_to_currency(order.value, :unit => "R$ ", :separator => ",", :delimiter => ".") %></td>
+    <td class="flex-table--row"><%= link_to "Details", order_path(order) %></td>
 </tr>

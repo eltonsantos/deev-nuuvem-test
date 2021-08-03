@@ -1,29 +1,28 @@
-<div class="container">
-  <div style="margin: 15px">
-    <h1>Gerenciar pedidos</h2>
-  </div>
+<div class="column-left">
+  <%= image_tag("logo.png", alt: "TEST USING RUBY ON RAILS", width: "230") %>
+  <h1>Gerenciar pedidos</h2>
   <%= render "dropzone" %>
-  <div id="orders-wrapper" >
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Order</th>
-                <th>Date</th>
-                <th>Total</th>
-                <th>Details</th>
-            <tr>
-        <thead>
-        <tbody>
-          <%= render @orders %>
-          <% if @orders.empty? %>
-            <tr>
-              <td>Nenhum arquivo enviado.</td>
-            </tr>
-          <% end %>
-        </tbody>
-      </thead>
-    </table>
-
-  <div>
 </div>
+
+<div id="orders-wrapper" class="column-right" >
+  <table class="table flex-table">
+      <thead class="flex-table--header">
+          <tr class="flex-table--row">
+            <th class="flex-table--row" >Order</th>
+            <th class="flex-table--row" >Date</th>
+            <th class="flex-table--row">Total</th>
+            <th class="flex-table--row">Details</th>
+          <tr>
+      <thead>
+      <tbody class="flex-table--body">
+        <%= render @orders %>
+        <% if @orders.empty? %>
+          <tr>
+            <td>Nenhum arquivo enviado.</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </thead>
+  </table>
+<div>
 

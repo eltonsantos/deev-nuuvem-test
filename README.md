@@ -25,6 +25,7 @@ This project was developed using the following technologies:
 - [Rails](https://rubyonrails.org/)
 - [Interactor](https://github.com/collectiveidea/interactor)
 - [DropzoneJS](https://github.com/ncuesta/dropzonejs-rails)
+- [Sass](https://sass-lang.com/)
 
 ## 🚀 Getting started
 
