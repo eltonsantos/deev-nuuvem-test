@@ -108,7 +108,6 @@ This project was developed for testing in the company Nuuvem, in the July 18, 20
 
 ###### Escreverei essa parte em português
 
-- [ ] Melhorar o visual, utilizando tailwind ou bootstrap ❤
 - [ ] Implementar layout infinito para mostrar todos pedidos na mesma tela ♾
 - [ ] Implementar o dark mode para os olhos agradecerem 😎
 - [ ] Implementar o skeleton loader para quando tiver muitos pedidos 🔼
