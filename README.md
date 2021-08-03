@@ -84,6 +84,20 @@ $ rails s
 
 ```
 
+To run all tests at the same time, do:
+
+```bash
+$ rspec --format documentation
+```
+
+To run a specific test do:
+
+```bash
+$ rspec --format documentation spec/models/[NAME]_spec.rb
+```
+
+###### --format documentation works to make the tests more formatted
+
 ## 💻 Project
 
 This project was developed for testing in the company Nuuvem, in the July 18, 2021. The project consists of receiving a csv, tab or txt file, processing the file and adding it to the sqlite database. Also, be able to show order details as well as the order total. An **example file** for uploading is inside the **storage folder**.
@@ -99,7 +113,6 @@ This project was developed for testing in the company Nuuvem, in the July 18, 20
 - [ ] Implementar o skeleton loader para quando tiver muitos pedidos 🔼
 - [ ] Ajustar alguns detalhes para o Layout ficar bem responsivo e fofo 🥰
 - [ ] Login e senha para poder acessar os pedidos 🔐
-- [ ] Adicionar testes para não ficar desesperado quando o projeto crescer 🔎
 - [ ] E muito mais... ❤💪🏼
 
 ---
