@@ -10,11 +10,11 @@ describe Merchant do
       expect(Merchant.new).to_not be_valid
     end
   
-    it "Should be invalid without a name" do
+    it "Should be invalid without a address" do
       expect(Merchant.new(address: "Ericson Santos")).to_not be_valid
     end
   
-    it "Should be invalid without a address" do
+    it "Should be invalid without a name" do
       expect(Merchant.new(name: "Avenida Dedé Brasil")).to_not be_valid
     end
   end
